@@ -16,7 +16,7 @@ def delete_message(handle, order):
             QueueUrl=url,
             ReceiptHandle=handle
         )
-        print("Message with order: " + order + " has been deleted")
+        print("Message with order: " + str(order) + " has been deleted")
     except ClientError as e:
         print(e.response['Error']['Message'])
 
@@ -68,11 +68,11 @@ def get_message():
 def construct_message(store_words):
     # make phrase then delete
     all_orders = list(store_words.keys())
-    print(all_orders)
+    # print(all_orders)
     all_orders.sort()
     message = ""
 
-    print(all_orders)
+    # print(all_orders)
 
     last_number = all_orders[-1]
     for number in all_orders:
