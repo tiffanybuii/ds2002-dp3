@@ -52,8 +52,8 @@ def get_message():
                 print(f"Word: {word}")
 
             # If there is no message in the queue, print a message and exit    
-            else:
-                print("No message in the queue")
+            # else:
+                # print("No message in the queue")
                 # break
                 
         # Handle any errors that may occur connecting to SQS
