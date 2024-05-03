@@ -32,7 +32,7 @@ def get_message():
                 AttributeNames=[
                     'All'
                 ],
-                MaxNumberOfMessages=10,
+                MaxNumberOfMessages=1,
                 MessageAttributeNames=[
                     'All'
                 ]
@@ -51,6 +51,8 @@ def get_message():
                 print(f"Order: {order}")
                 print(f"Word: {word}")
 
+                counter += 1
+
             # If there is no message in the queue, print a message and exit    
             # else:
                 # print("No message in the queue")
@@ -59,9 +61,10 @@ def get_message():
         # Handle any errors that may occur connecting to SQS
         except ClientError as e:
             print(e.response['Error']['Message'])
+            # break
         
-        all_orders = list(store_words.keys())
-        counter = len(all_orders)
+        # all_orders = list(store_words.keys())
+        # counter = len(all_orders)
 
     construct_message(store_words)
     
